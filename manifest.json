@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Uncommon Hacks WebExtension Starter",
+  "version": "1.0",
+  "description": "",
+
+  "icons": {
+    "48": "icons/uncommon48.png",
+    "96": "icons/uncommon96.png"
+  },
+
+
+  "permissions": [
+    "tabs", 
+    "storage"
+  ],
+
+  "background": {
+    "scripts": [
+      "lib/browser-polyfill.min.js",
+      "background/background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["*://*/_/chrome/newtab*"],
+      "js": [
+        "lib/browser-polyfill.min.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle", 
+      "all_frames": false
+    }
+  ],
+  
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/uncommon19.png",
+      "38": "icons/uncommon38.png"
+    },
+    "default_popup": "popup/popup.html",
+    "default_title": "Popup Title"
+  }
+
+}
