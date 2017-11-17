@@ -8,7 +8,7 @@ async function getTabTitles() {
     // process tabs array and return just an array of tab titles
     const titles = tabs.map(tab => tab.title);
     
-    return ttles;
+    return titles;
 }
 
 async function updatePopup() {
